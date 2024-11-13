@@ -1,0 +1,118 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.main-chart-wrapper {
+    display: flex;
+    width: 600px;
+    height: 400px;
+    margin-bottom: 100px;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-elem {
+    margin-bottom: 20px;
+}
+
+.chart-elem {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    height: var(--norm-value);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.component {
+    color: #fff;
+}
+
+.chart-norm {
+    justify-content: center;
+    align-items: center;
+    background-image: url("./assets/Subtract.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.chart-column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.norm {
+    width: 40%;
+    background-color: rgba(255, 255, 255, 1); 
+    color: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 5px;
+}
+
+.chart-elem div {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.front {
+    background-color: #4AB6E8;
+    height: var(--front-value); 
+}
+  
+.back {
+    background-color: #AA6FAC; 
+    height: var(--back-value); 
+}
+  
+.db {
+    background-color: #E85498; 
+    height: var(--db-value); 
+}
+
+.item-color::before {
+    content: "";          
+    display: inline-block;   
+    width: 20px;               
+    height: 20px;             
+    margin-right: 8px;         
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+.client-side::before {
+    background-color: #4AB6E8;     /* Цвет квадрата */
+}
+
+.server-side::before {
+    background-color: #AA6FAC;     /* Цвет квадрата */
+}
+
+.data-base::before {
+    background-color: #E85498;     /* Цвет квадрата */
+}
+
+.arrow {
+    position: absolute;
+    top: 10px; /* Расстояние от верхнего края блока */
+    left: 110px; /* Начало стрелки на уровне первого блока */
+    width: 100px; /* Регулирует горизонтальное расстояние между блоками */
+    height: 50px; /* Высота вертикального отрезка */
+  }
+
+  .dev-column {
+    position: relative;
+  }

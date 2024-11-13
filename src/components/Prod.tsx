@@ -1,9 +1,11 @@
-import { ChartElem } from "./ChartElem"
+import { ChartElem } from "./ChartElem";
+import { InstanceProps } from './types';
 
-export function Prod() {
+export function Prod({data}: InstanceProps) {
   return (
-    <>
-      <ChartElem/>
-    </>
+    <div className="chart-column">
+      <ChartElem data={data}/>
+      <span className="chart-sign">prod</span>
+    </div>
   )
 }

@@ -12,10 +12,11 @@ export interface ChartData {
   norm: number;
 }
 
-export interface DataVisualize {
+export interface ChartProps {
   data: ChartData | null;
 }
 
-export interface DataElem {
-  data: InstanceData;
+export interface InstanceProps {
+  data: InstanceData | undefined;
 }
+

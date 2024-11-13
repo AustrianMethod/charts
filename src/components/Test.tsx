@@ -1,9 +1,13 @@
 import { ChartElem } from "./ChartElem";
+import { InstanceProps } from './types';
 
-export function Test() {
+export function Test({data}: InstanceProps) {
   return (
     <>
-      <ChartElem/>
+      <div className="chart-column">
+        <ChartElem data={data}/>
+        <span className="chart-sign">test</span>
+      </div>
     </>
   )
 }
