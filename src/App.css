@@ -7,7 +7,7 @@
 .main-chart-wrapper {
     display: flex;
     width: 600px;
-    height: 400px;
+    height: auto;
     margin-bottom: 100px;
     justify-content: space-between;
     align-items: end;
@@ -105,14 +105,36 @@
     background-color: #E85498;     /* Цвет квадрата */
 }
 
-.arrow {
-    position: absolute;
-    top: 10px; /* Расстояние от верхнего края блока */
-    left: 110px; /* Начало стрелки на уровне первого блока */
-    width: 100px; /* Регулирует горизонтальное расстояние между блоками */
-    height: 50px; /* Высота вертикального отрезка */
+.svg-container {
+    position: relative;
+    width: 200px;
+    height: 100px;
   }
 
-  .dev-column {
-    position: relative;
-  }
+.dev-box {
+   position: absolute; 
+   top: 0%; 
+   left: 50%; 
+   transform: translateX(-50%); 
+   width: 40px; 
+   height: 20px; 
+   background-color: #FC440F; 
+   border-radius: 10px;
+}
+
+.arrows-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.test-box {
+    position: absolute; 
+    top: 0%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 40px; 
+    height: 20px; 
+    background-color: #00CC99; 
+    border-radius: 10px;
+ }
