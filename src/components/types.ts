@@ -3,6 +3,10 @@ export interface InstanceData {
   back: number;
   db: number;
 }
+
+export interface InstanceProps {
+  data: InstanceData | undefined;
+}
   
 export interface ChartData {
   title: string;
@@ -16,7 +20,5 @@ export interface ChartProps {
   data: ChartData | null;
 }
 
-export interface InstanceProps {
-  data: InstanceData | undefined;
-}
+
 

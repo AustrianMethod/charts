@@ -111,30 +111,32 @@
     height: 100px;
   }
 
-.dev-box {
-   position: absolute; 
-   top: 0%; 
-   left: 50%; 
-   transform: translateX(-50%); 
-   width: 40px; 
-   height: 20px; 
-   background-color: #FC440F; 
-   border-radius: 10px;
-}
-
 .arrows-wrapper {
     display: flex;
     flex-wrap: wrap;
     margin-top: 50px;
 }
 
-.test-box {
-    position: absolute; 
-    top: 0%; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    width: 40px; 
-    height: 20px; 
+.box {
+   position: absolute; 
+   top: 0%; 
+   left: 50%; 
+   transform: translateX(-50%); 
+   width: 40px; 
+   height: 20px; 
+   border-radius: 10px;
+   color: #fff;
+   text-align: center;
+}
+
+.green-background {
     background-color: #00CC99; 
-    border-radius: 10px;
- }
+}
+  
+.red-background {
+    background-color: #FC440F; 
+}
+  
+.gray-background {
+    background-color: gray;
+}
