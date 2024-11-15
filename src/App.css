@@ -19,16 +19,13 @@
 }
 
 .chart-elem {
-    margin-bottom: 20px;
-}
-
-.chart-elem {
     display: flex;
     flex-direction: column;
     width: 80px;
     height: var(--norm-value);
     border-radius: 5px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .component {

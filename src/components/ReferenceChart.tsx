@@ -1,6 +1,5 @@
 import { ChartProps } from './types';
 
-
 export function ReferenceChart({ data }: ChartProps) {
   if (!data) {
     return null;
