@@ -59,7 +59,6 @@
 }
 
 .chart-elem div {
-    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,9 +103,12 @@
 
 .svg-container {
     position: relative;
-    width: 200px;
     height: 100px;
   }
+
+svg {
+    overflow: visible;
+}
 
 .arrows-wrapper {
     display: flex;

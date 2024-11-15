@@ -1,8 +1,14 @@
 import { MainChart } from './MainChart';
 import { ChartProps, InstanceData } from './types';
+import { useHeight } from './HeightContext';
 
 export function DataVisualize({data}: ChartProps) {
   
+    const { devHeight, testHeight } = useHeight();
+    console.log(devHeight, testHeight)
+    const arrowStartY = devHeight;  // Расчет на основе высоты Dev
+    const arrowEndY = testHeight; 
+      
 //функция для нахождения суммы по трем компонентам каждого инстанса
     const sumFunc = ( component: InstanceData | undefined): number => { 
       return component ? Object.values(component).reduce( (acc, curr) => acc + curr, 0) : 0
@@ -42,8 +48,8 @@ export function DataVisualize({data}: ChartProps) {
           <div className='arrows-wrapper'>
             <div className="svg-container">
               <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 10 80 L 10 10 L 190 10 L 190 80" fill="none" stroke="#898290" strokeWidth="2"/>
-                <polygon points="185,80 195,80 190,90" fill="#898290" />
+                <path d={`M 10 ${arrowStartY} L 10 10 L 190 10 L 190 ${arrowEndY}`} fill="none" stroke="#898290" strokeWidth="2"/>
+                <polygon points={`185,${arrowEndY} 195,${arrowEndY} 190,${arrowEndY + 10}`} fill="#898290" />
               </svg>
               <div className={`box ${devToTest}`}>{testDev}</div>
             </div>

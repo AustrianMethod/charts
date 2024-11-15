@@ -20,5 +20,11 @@ export interface ChartProps {
   data: ChartData | null;
 }
 
+export interface HeightContextType {
+  devHeight: number;
+  testHeight: number;
+  setDevHeight: (height: number) => void;
+  setTestHeight: (height: number) => void;
+};
 
 
