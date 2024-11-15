@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { DataVisualize } from './components/DataVisualize'
 import { ChartData } from './components/types';
-import { HeightProvider } from './components/HeightContext';
 import './App.css'
 
 function App() {
@@ -14,11 +13,9 @@ function App() {
   }, []);
 
   return (
-    <HeightProvider>
       <div className='wrapper'>
-        <DataVisualize data={data}/>
+        <DataVisualize data={data} heights={null}/>
       </div>
-    </HeightProvider>
   )
 }
 

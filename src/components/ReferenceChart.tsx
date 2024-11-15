@@ -1,6 +1,6 @@
 import { ChartProps } from './types';
 
-export function ReferenceChart({ data }: ChartProps) {
+export function ReferenceChart({ data, heights }: ChartProps) {
   if (!data) {
     return null;
   };
@@ -10,7 +10,7 @@ export function ReferenceChart({ data }: ChartProps) {
     <div className="chart-column">
       <div className="chart-elem  chart-norm"
         style={{
-          "--norm-value": `${norm}px`,
+          "--norm-value": `${heights?.normHeight}px`,
         } as React.CSSProperties}
       >
         <div className="norm">{norm}</div>  

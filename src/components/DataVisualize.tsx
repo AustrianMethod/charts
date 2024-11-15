@@ -1,13 +1,7 @@
 import { MainChart } from './MainChart';
 import { ChartProps, InstanceData } from './types';
-import { useHeight } from './HeightContext';
 
-export function DataVisualize({data}: ChartProps) {
-  
-    const { devHeight, testHeight } = useHeight();
-    console.log(devHeight, testHeight)
-    const arrowStartY = devHeight;  // Расчет на основе высоты Dev
-    const arrowEndY = testHeight; 
+export function DataVisualize({data}: ChartProps) { 
       
 //функция для нахождения суммы по трем компонентам каждого инстанса
     const sumFunc = ( component: InstanceData | undefined): number => { 
@@ -17,6 +11,20 @@ export function DataVisualize({data}: ChartProps) {
     const sumDev = data ? sumFunc(data.dev) : 0;
     const sumTest = data ? sumFunc(data.test) : 0;
     const sumProd = data ? sumFunc(data.prod) : 0;
+
+    const maxSum = Math.max(sumDev, sumTest, sumProd, data?.norm ? data.norm : 0);
+
+    const devHeight = (sumDev / maxSum) * 200;
+    const testHeight = (sumTest / maxSum) * 200;
+    const prodHeight = (sumProd / maxSum) * 200;
+    const normHeight = (data?.norm ? data.norm : 0 / maxSum) * 200; 
+
+    const heights = {
+      devHeight,
+      testHeight,
+      prodHeight,
+      normHeight
+    }
 
 //добавляем стрелки
 
@@ -61,7 +69,7 @@ export function DataVisualize({data}: ChartProps) {
               <div className={`box ${testToProd}`}>{prodTest}</div>
             </div>
           </div>
-          <MainChart data={data}/>
+          <MainChart data={data} heights={heights}/>
           <div className='footer'>
             <span className='client-side item-color'>Клиентская часть</span>
             <span className='server-side item-color'>Серверная часть</span>

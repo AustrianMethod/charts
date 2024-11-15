@@ -4,13 +4,17 @@ export interface InstanceData {
   db: number;
 }
 
-export interface InstanceProps {
-  data: InstanceData | undefined;
-}
+// export interface InstanceProps {
+//   data: InstanceData | undefined;
+// }
   
 export interface ChartData {
   title: string;
-  dev: InstanceData;
+  dev: {
+    front: number;
+    back: number;
+    db: number;
+  }
   test: InstanceData;
   prod: InstanceData;
   norm: number;
@@ -18,13 +22,13 @@ export interface ChartData {
 
 export interface ChartProps {
   data: ChartData | null;
+  heights: {
+    devHeight: number;
+    testHeight: number;
+    prodHeight: number;
+    normHeight: number;
+  } | null;
 }
 
-export interface HeightContextType {
-  devHeight: number;
-  testHeight: number;
-  setDevHeight: (height: number) => void;
-  setTestHeight: (height: number) => void;
-};
 
 

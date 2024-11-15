@@ -1,24 +1,25 @@
+// import { ChartElem } from "./ChartElem";
+import { ChartProps } from './types';
 
-import { ChartElem } from "./ChartElem";
-import { useEffect, useRef } from 'react';
-import { InstanceProps } from './types';
-import { useHeight } from './HeightContext';
 
-export function Dev({data}: InstanceProps) {
+export function Dev({data, heights}: ChartProps) {
 
-  const { setDevHeight } = useHeight();
-  const devRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (devRef.current) {
-      setDevHeight(devRef.current.clientHeight);
-    }
-  }, [data]);
-
+  let { front, back, db } = data?.dev;
 
   return (
-    <div className="chart-column dev-column" ref={devRef}>
-      <ChartElem data={data}/>
+    <div className="chart-column dev-column">
+      <div className="chart-elem"
+        style={{
+          "--front-value": `${front}px`,
+          "--back-value": `${back}px`,
+          "--db-value": `${db}px`,
+        } as React.CSSProperties}
+      >
+        {/* <h3>{label}</h3> */}
+        <div className="front component">{front}</div>
+        <div className="back component">{back}</div>
+        <div className="db component">{db}</div>
+      </div>
       <span className="chart-sign">dev</span>
     </div>
   )
