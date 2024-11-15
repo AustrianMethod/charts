@@ -1,23 +1,30 @@
-// import { InstanceProps } from "./types";
+import { InstanceProps } from "./types";
 
-// export function ChartElem({data}: InstanceProps) {
-//     if (!data) {
-//         return null; 
-//       }
+export function ChartElem({data, maxSum, onHeightChange}: InstanceProps & { onHeightChange?: (height: number) => void }) {
+    if (!data) {
+        return null; 
+      }
 
-//     let { front, back, db } = data;
-//     return (
-//       <div className="chart-elem"
-//         style={{
-//           "--front-value": `${front}px`,
-//           "--back-value": `${back}px`,
-//           "--db-value": `${db}px`,
-//         } as React.CSSProperties}
-//       >
-//         {/* <h3>{label}</h3> */}
-//         <div className="front component">{front}</div>
-//         <div className="back component">{back}</div>
-//         <div className="db component">{db}</div>
-//       </div>
-//     )
-// }
+    const { front, back, db } = data;
+    const frontHeight = Math.round((front / maxSum) * 300);
+    const backHeight = Math.round((back / maxSum) * 300);
+    const dbHeight = Math.round((db / maxSum) * 300);
+
+    const totalHeight = frontHeight + backHeight + dbHeight;
+
+    onHeightChange?.(totalHeight);
+
+    return (
+      <div className="chart-elem"
+        style={{
+          "--front-value": `${frontHeight}px`,
+          "--back-value": `${backHeight}px`,
+          "--db-value": `${dbHeight}px`,
+        } as React.CSSProperties}
+      >
+        <div className="front component bold">{front}</div>
+        <div className="back component bold">{back}</div>
+        <div className="db component bold">{db}</div>
+      </div>
+    )
+}

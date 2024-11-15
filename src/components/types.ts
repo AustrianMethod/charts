@@ -4,17 +4,10 @@ export interface InstanceData {
   db: number;
 }
 
-// export interface InstanceProps {
-//   data: InstanceData | undefined;
-// }
-  
+
 export interface ChartData {
   title: string;
-  dev: {
-    front: number;
-    back: number;
-    db: number;
-  }
+  dev: InstanceData;
   test: InstanceData;
   prod: InstanceData;
   norm: number;
@@ -22,13 +15,12 @@ export interface ChartData {
 
 export interface ChartProps {
   data: ChartData | null;
-  heights: {
-    devHeight: number;
-    testHeight: number;
-    prodHeight: number;
-    normHeight: number;
-  } | null;
+  maxSum: number | null;
 }
 
 
 
+export interface InstanceProps {
+  data: InstanceData | undefined;
+  maxSum: number;
+}

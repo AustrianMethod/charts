@@ -1,25 +1,23 @@
-// import { ChartElem } from "./ChartElem";
+import { useState } from "react";
+import { ChartElem } from "./ChartElem";
 import { ChartProps } from './types';
 
+export function Dev({data, maxSum, onHeightUpdate}: ChartProps & { onHeightUpdate?: (height: number) => void }) {
 
-export function Dev({data, heights}: ChartProps) {
 
-  let { front, back, db } = data?.dev;
+  const [height, setHeight] = useState(0);
+  const handleHeightChange = (newHeight: number) => {
+      setHeight(newHeight);
+      onHeightUpdate?.(newHeight); // Передаем высоту в DataVisualize
+  };
+
+  if (!maxSum) {
+    return null; 
+  }
 
   return (
-    <div className="chart-column dev-column">
-      <div className="chart-elem"
-        style={{
-          "--front-value": `${front}px`,
-          "--back-value": `${back}px`,
-          "--db-value": `${db}px`,
-        } as React.CSSProperties}
-      >
-        {/* <h3>{label}</h3> */}
-        <div className="front component">{front}</div>
-        <div className="back component">{back}</div>
-        <div className="db component">{db}</div>
-      </div>
+    <div className="chart-column">
+      <ChartElem data={data?.dev} maxSum={maxSum} onHeightChange={handleHeightChange}/>
       <span className="chart-sign">dev</span>
     </div>
   )

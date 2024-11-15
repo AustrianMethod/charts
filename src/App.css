@@ -1,3 +1,24 @@
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+.medium {
+    font-weight: 500;
+    font-size: 16px;
+    color: #898290;
+}
+  
+.bold {
+    font-weight: 700;
+    font-size: 14px;
+}
+  
+.regular {
+    font-weight: 400;
+    font-size: 10px;
+    color: #898290;
+}
+
 .wrapper {
     display: flex;
     justify-content: center;
@@ -22,7 +43,6 @@
     display: flex;
     flex-direction: column;
     width: 80px;
-    height: var(--norm-value);
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 20px;
@@ -33,6 +53,7 @@
 }
 
 .chart-norm {
+    height: var(--norm-value);
     justify-content: center;
     align-items: center;
     background-image: url("./assets/Subtract.svg");
@@ -49,9 +70,9 @@
 }
 
 .norm {
-    width: 40%;
+    padding: 5px 10px;
     background-color: rgba(255, 255, 255, 1); 
-    color: #000;
+    color: #898290;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -103,7 +124,7 @@
 
 .svg-container {
     position: relative;
-    height: 100px;
+    /* height: 100px; */
   }
 
 svg {
@@ -121,9 +142,8 @@ svg {
    top: 0%; 
    left: 50%; 
    transform: translateX(-50%); 
-   width: 40px; 
-   height: 20px; 
    border-radius: 10px;
+   padding: 2px 4px;
    color: #fff;
    text-align: center;
 }

@@ -7,14 +7,14 @@ function App() {
   const [data, setData] = useState<ChartData | null>(null);
 
   useEffect(() => {
-    fetch('https://rcslabs.ru/ttrp1.json')
+    fetch('https://rcslabs.ru/ttrp4.json')
       .then(response => response.json())
       .then(json => setData(json));
   }, []);
 
   return (
       <div className='wrapper'>
-        <DataVisualize data={data} heights={null}/>
+        <DataVisualize data={data} maxSum={null}/>
       </div>
   )
 }
