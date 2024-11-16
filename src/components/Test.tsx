@@ -7,10 +7,10 @@ export function Test({data, maxSum, onHeightUpdate}: ChartProps & { onHeightUpda
 
   const [height, setHeight] = useState(0);
 
-    const handleHeightChange = (newHeight: number) => {
-        setHeight(newHeight);
-        onHeightUpdate?.(newHeight); // Передаем высоту в DataVisualize
-    };
+  const handleHeightChange = (newHeight: number) => {
+      setHeight(newHeight);
+      onHeightUpdate?.(newHeight);
+  };
 
   if (!maxSum) {
     return null; 
@@ -19,7 +19,7 @@ export function Test({data, maxSum, onHeightUpdate}: ChartProps & { onHeightUpda
   return (
       <div className="chart-column ">
         <ChartElem data={data?.test} maxSum={maxSum} onHeightChange={handleHeightChange}/>
-        <span className="chart-sign">test</span>
+        <span className="chart-sign regular">test</span>
       </div>
   )
 }

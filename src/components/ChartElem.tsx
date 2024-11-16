@@ -7,15 +7,19 @@ export function ChartElem({data, maxSum, onHeightChange}: InstanceProps & { onHe
       }
 
     const { front, back, db } = data;
-    const frontHeight = Math.round((front / maxSum) * 300);
-    const backHeight = Math.round((back / maxSum) * 300);
-    const dbHeight = Math.round((db / maxSum) * 300);
+    let frontHeight = Math.round((front / maxSum) * 265);
+    let backHeight = Math.round((back / maxSum) * 265);
+    let dbHeight = Math.round((db / maxSum) * 265);
+
+    if (frontHeight === 0) frontHeight = 20;
+    if (backHeight === 0) backHeight = 20;
+    if (dbHeight === 0) dbHeight = 20;
 
     const totalHeight = frontHeight + backHeight + dbHeight;
 
     useEffect(() => {
       onHeightChange?.(totalHeight);
-  }, [totalHeight, onHeightChange]);
+    }, [totalHeight, onHeightChange]);
 
     return (
       <div className="chart-elem"

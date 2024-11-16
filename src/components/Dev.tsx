@@ -18,7 +18,7 @@ export function Dev({data, maxSum, onHeightUpdate}: ChartProps & { onHeightUpdat
   return (
     <div className="chart-column">
       <ChartElem data={data?.dev} maxSum={maxSum} onHeightChange={handleHeightChange}/>
-      <span className="chart-sign">dev</span>
+      <span className="chart-sign regular">dev</span>
     </div>
   )
 }

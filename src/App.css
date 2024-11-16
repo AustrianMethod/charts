@@ -1,8 +1,20 @@
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1E1E1E;
+}
+
 body {
+    margin: 0;
     font-family: 'Roboto', sans-serif;
   }
 
 .medium {
+    display: block;
+    padding-left: 10px;
+    padding-top: 5px;
     font-weight: 500;
     font-size: 16px;
     color: #898290;
@@ -20,32 +32,49 @@ body {
 }
 
 .wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+    position: relative; 
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 7px;
+}
+
+.menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.data-wrapper {
+    padding: 0px 34px;
 }
 
 .main-chart-wrapper {
     display: flex;
-    width: 600px;
+    width: 500px;
     height: auto;
-    margin-bottom: 100px;
+    max-height: 285px;
+    box-sizing: border-box;
+    margin-bottom: 45px;
     justify-content: space-between;
     align-items: end;
 }
 
 .footer {
     display: flex;
-    justify-content: space-between;
+    box-sizing: border-box;
+    width: 500px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    justify-content: space-around;
 }
 
 .chart-elem {
     display: flex;
     flex-direction: column;
     width: 80px;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .component {
@@ -103,28 +132,27 @@ body {
 .item-color::before {
     content: "";          
     display: inline-block;   
-    width: 20px;               
-    height: 20px;             
+    width: 16px;               
+    height: 16px;             
     margin-right: 8px;         
     vertical-align: middle;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .client-side::before {
-    background-color: #4AB6E8;     /* Цвет квадрата */
+    background-color: #4AB6E8;   
 }
 
 .server-side::before {
-    background-color: #AA6FAC;     /* Цвет квадрата */
+    background-color: #AA6FAC;    
 }
 
 .data-base::before {
-    background-color: #E85498;     /* Цвет квадрата */
+    background-color: #E85498;     
 }
 
 .svg-container {
     position: relative;
-    /* height: 100px; */
   }
 
 svg {
@@ -134,18 +162,34 @@ svg {
 .arrows-wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 50px;
+    margin-top: 30px;
+}
+
+.arrow-svg {
+    padding: 0 3px;
 }
 
 .box {
    position: absolute; 
-   top: 0%; 
-   left: 50%; 
-   transform: translateX(-50%); 
-   border-radius: 10px;
-   padding: 2px 4px;
+   top: 22%; 
+   border-radius: 15px;
+   padding: 3px 8px;
    color: #fff;
    text-align: center;
+}
+
+.box1 {
+    left: 47%; 
+    transform: translateX(-15%);
+}
+
+.box2 {
+    left: 27%; 
+    transform: translateX(-15%);
+}
+
+.rotate {
+    transform: rotate(180deg);
 }
 
 .green-background {
