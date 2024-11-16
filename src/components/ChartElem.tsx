@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { InstanceProps } from "./types";
 
 export function ChartElem({data, maxSum, onHeightChange}: InstanceProps & { onHeightChange?: (height: number) => void }) {
@@ -12,7 +13,9 @@ export function ChartElem({data, maxSum, onHeightChange}: InstanceProps & { onHe
 
     const totalHeight = frontHeight + backHeight + dbHeight;
 
-    onHeightChange?.(totalHeight);
+    useEffect(() => {
+      onHeightChange?.(totalHeight);
+  }, [totalHeight, onHeightChange]);
 
     return (
       <div className="chart-elem"

@@ -18,8 +18,6 @@ export interface ChartProps {
   maxSum: number | null;
 }
 
-
-
 export interface InstanceProps {
   data: InstanceData | undefined;
   maxSum: number;
