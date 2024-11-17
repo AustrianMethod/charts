@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState<ChartData | null>(null);
 
   useEffect(() => {
-    fetch('https://rcslabs.ru/ttrp4.json')
+    fetch('https://rcslabs.ru/ttrp1.json')
       .then(response => response.json())
       .then(json => setData(json));
   }, []);

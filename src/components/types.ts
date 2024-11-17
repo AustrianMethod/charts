@@ -16,6 +16,7 @@ export interface ChartData {
 export interface ChartProps {
   data: ChartData | null;
   maxSum: number | null;
+  onHeightUpdate?: ( height: number ) => void ;
 }
 
 export interface InstanceProps {

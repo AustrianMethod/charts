@@ -23,5 +23,7 @@ export function MainChart({data, maxSum, onDevHeightUpdate, onTestHeightUpdate, 
           <span className='data-base item-color regular'>База данных</span>
         </div>
       </>
+        
+        
     )
 }
