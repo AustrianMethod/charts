@@ -1,14 +1,9 @@
-import { useState } from "react";
 import { ChartElem } from "./ChartElem";
 import { ChartProps } from './types';
 
 export function Test({data, maxSum, onHeightUpdate}: ChartProps & { onHeightUpdate?: (height: number) => void }) {
 
-
-  const [height, setHeight] = useState(0);
-
   const handleHeightChange = (newHeight: number) => {
-      setHeight(newHeight);
       onHeightUpdate?.(newHeight);
   };
 

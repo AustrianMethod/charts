@@ -17,6 +17,8 @@ export function ChartElem({data, maxSum, onHeightChange}: InstanceProps & { onHe
 
     const totalHeight = frontHeight + backHeight + dbHeight;
 
+//При изменении высоты передаем ее в Dev
+
     useEffect(() => {
       onHeightChange?.(totalHeight);
     }, [totalHeight, onHeightChange]);

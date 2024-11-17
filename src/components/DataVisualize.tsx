@@ -4,9 +4,9 @@ import { ChartProps, InstanceData } from './types';
 
 export function DataVisualize({data}: ChartProps) { 
 
-   const [devHeight, setDevHeight] = useState(0);
-   const [testHeight, setTestHeight] = useState(0);
-   const [prodHeight, setProdHeight] = useState(0);
+    const [devHeight, setDevHeight] = useState(0);
+    const [testHeight, setTestHeight] = useState(0);
+    const [prodHeight, setProdHeight] = useState(0);
       
 //функция для нахождения суммы по трем компонентам каждого инстанса
     const sumFunc = ( component: InstanceData | undefined): number => { 

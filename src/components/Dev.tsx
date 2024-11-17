@@ -1,14 +1,12 @@
-import { useState } from "react";
 import { ChartElem } from "./ChartElem";
 import { ChartProps } from './types';
 
 export function Dev({data, maxSum, onHeightUpdate}: ChartProps & { onHeightUpdate?: (height: number) => void }) {
 
+// Передаем высоту в DataVisualize
 
-  const [height, setHeight] = useState(0);
   const handleHeightChange = (newHeight: number) => {
-      setHeight(newHeight);
-      onHeightUpdate?.(newHeight); // Передаем высоту в DataVisualize
+      onHeightUpdate?.(newHeight); 
   };
 
   if (!maxSum) {
